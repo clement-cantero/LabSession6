@@ -1,0 +1,77 @@
+@startuml
+class Vertex{
+-id : Int
+-color : String
+-info : Object
++getId(): Int
++setId(id)
++getColor(): String
++setColor(color)
++getInfo(): Object
++setInfo(info)
++toString()
+}
+
+abstract class Edge{
+-id : Int
+-color : String
+-ends : Vertex[2]
+-value : Double
++getId(): Int
++setId(id)
++getColor(): String
++setColor(color)
++getValue(): Double
++setValue(value)
++getEnds(): Vertex[2]
++setEnds(ends)
++toString()
+}
+
+class DirectedEdge extends Edge{
+-source : Int
++getSource() : Vertex
++getSink() : Vertex
++toString()
+}
+
+class UndirectedEdge extends Edge{
++getEnds() : Vertex[]
++toString()
+}
+
+interface Graph{
++nbOfVertices() : Int
++nbOfEdges() : Int
++addVertex(Vertex)
++addEdge(Vertex, Vertex, EdgeKind)
++isConnected(Vertex, Vertex) : Bool
++isConnected() : Bool
++getEdges(Vertex, Vertex) : Edge[]
++getEdges() : Edge[]
++getVertices() : Vertex[]
++getNeighborEdges(Vertex) : Edge[]
++toString()
+}
+
+enum EdgeKind{
++states : String[]
+}
+
+class TestGraph{
+-vertex : Vertex
+-edge : Edge
++getVertex() : Vertex
++setVertex(vertex)
++getEdge() : Edge
++setEdge(edge)
+}
+TestGraph ..  Vertex
+Edge "*" o-- "2" Vertex
+TestGraph .. Edge
+
+Graph ..> EdgeKind
+Graph ..> Edge
+Graph ..> Vertex
+@enduml
+
