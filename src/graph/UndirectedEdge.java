@@ -1,3 +1,4 @@
+package graph;
 public class UndirectedEdge extends Edge{
   public UndirectedEdge(int id, String color, Vertex[] ends, double value){
     super(id,color,ends,value);

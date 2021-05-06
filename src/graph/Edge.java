@@ -1,3 +1,4 @@
+package graph;
 import java.util.Arrays;
 
 public abstract class Edge{

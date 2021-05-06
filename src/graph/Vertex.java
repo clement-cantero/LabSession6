@@ -1,3 +1,4 @@
+package graph;
 public class Vertex{
   private int id;
   private String color;

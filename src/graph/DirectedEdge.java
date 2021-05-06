@@ -1,3 +1,4 @@
+package graph;
 public class DirectedEdge extends Edge{
   private int source;
   public DirectedEdge(int id, String color, Vertex[] ends, double value, int source){
